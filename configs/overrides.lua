@@ -14,6 +14,7 @@ M.treesitter = {
     "markdown_inline",
     "python",
     "rust",
+    "solidity",
   },
   indent = {
     enable = true,
@@ -45,6 +46,9 @@ M.mason = {
 
     -- rust
     "rust-analyzer",
+
+    -- solidity
+    "nomicfoundation-solidity-language-server",
   },
 }
 
