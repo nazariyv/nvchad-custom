@@ -22,6 +22,9 @@ M.general = {
     ["K"] = { ":m '<-2<CR>gv=gv", "move block down" },
     ["<leader>y"] = { '\"+y', "yanks into +" },
     ["<leader>d"] = { '\"_d', "delete into void" },
+    -- stay in visual mode after shifting block of code with > or <
+    ["<"] = { "<gv", "shift left and keep visual mode" },
+    [">"] = { ">gv", "shift right and keep visual mode" },
   },
   x = {
     ["<leader>p"] = { '\"_dP', "copying trick from prime" },

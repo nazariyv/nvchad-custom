@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -28,7 +28,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -51,18 +51,27 @@ local plugins = {
   },
 
   -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  {
+    "NvChad/nvim-colorizer.lua",
+    -- enabled = false
+  },
 
   {
     "rust-lang/rust.vim",
     ft = "rust",
-    init = function ()
-      vim.g.rustfmt_autosave = 1
-    end
-  }
+    -- TODO: causing some issues sometimes
+    -- init = function()
+    --   vim.g.rustfmt_autosave = 1
+    -- end,
+  },
+
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+    lazy = false,
+  },
 }
 
 return plugins
