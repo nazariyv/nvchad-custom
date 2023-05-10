@@ -65,12 +65,18 @@ local plugins = {
     -- end,
   },
 
+  -- I literally had to go into: /home/shredder/.local/share/nvim/lazy/markdown-preview.nvim
+  -- and `yarn install`. There is some problem with this plugin right now
+  -- also see: https://github.com/iamcco/markdown-preview.nvim/issues/188
+  -- I saw the debug message by going `:messages` in nvim
   {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end,
+    "iamcco/markdown-preview.nvim",
     lazy = false,
+    run = "cd app & yarn install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
 }
 
