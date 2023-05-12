@@ -3,8 +3,9 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
+-- ! for graphql I also had to execute: TSInstall graphql to get treesitter to download
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "ruff_lsp" }
+local servers = { "html", "cssls", "tsserver", "clangd", "ruff_lsp", "graphql" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
