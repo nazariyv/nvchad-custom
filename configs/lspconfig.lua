@@ -29,6 +29,12 @@ lspconfig.rust_analyzer.setup {
 }
 
 lspconfig.solidity.setup {
+  -- !!! ------------- !!!
+  -- if you miss adding the on_attach and capabilties here, lsp features like
+  -- go to definition, or inspecting diagnostic messages will **NOT** work!!
+  on_attach = on_attach,
+  capabilities = capabilities,
+  -- !!! ------------- !!!
   cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
   filetypes = { "solidity" },
   root_dir = lspconfig.util.find_git_ancestor,
