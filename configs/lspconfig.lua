@@ -14,27 +14,26 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-local util = require "lspconfig/util"
-lspconfig.rust_analyzer.setup({
+lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {"rust"},
-  root_dir = util.root_pattern("Cargo.toml"),
+  filetypes = { "rust" },
+  root_dir = lspconfig.util.root_pattern "Cargo.toml",
   settings = {
-    ['rust-analyzer'] = {
+    ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,
-      }
-    }
-  }
-})
+      },
+    },
+  },
+}
 
-lspconfig.solidity.setup({
-	cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
-	filetypes = { 'solidity' },
-	root_dir = require("lspconfig.util").find_git_ancestor,
-	single_file_support = true,
-})
+lspconfig.solidity.setup {
+  cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+  filetypes = { "solidity" },
+  root_dir = lspconfig.util.find_git_ancestor,
+  single_file_support = true,
+}
 
--- 
+--
 -- lspconfig.pyright.setup { blabla}
