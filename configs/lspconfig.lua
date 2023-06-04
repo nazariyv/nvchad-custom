@@ -14,21 +14,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "rust" },
-  root_dir = lspconfig.util.root_pattern "Cargo.toml",
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        allFeatures = true,
-      },
-    },
-  },
-}
-
-
 -- Solidity LSPConfig will be weird until nomic foundation sls is merged into nvim-lspconfig
 local utils = require("core.utils")
 local solidity_on_attach = function(client, bufnr)
@@ -54,6 +39,3 @@ lspconfig.solidity.setup {
   root_dir = lspconfig.util.find_git_ancestor,
   single_file_support = true,
 }
-
---
--- lspconfig.pyright.setup { blabla}
