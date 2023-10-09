@@ -38,7 +38,12 @@ M.mason = {
     "prettier",
 
     -- python
+    "pyright",
+    "mypy",
+    "ruff",
     "ruff-lsp",
+    "black",
+    "debugpy",
 
     -- c/cpp stuff
     "clangd",

@@ -17,6 +17,11 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  -- python static analysis and formatting
+  b.diagnostics.mypy,
+  b.diagnostics.ruff,
+  b.formatting.black.with { filetypes = { "python" } },
 }
 
 null_ls.setup {

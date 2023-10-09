@@ -3,9 +3,10 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
+-- TODO
 -- ! for graphql I also had to execute: TSInstall graphql to get treesitter to download
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "ruff_lsp", "graphql" }
+local servers = { "html", "cssls", "tsserver", "clangd", "ruff_lsp", "graphql", "ruff_lsp" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -15,7 +16,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Solidity LSPConfig will be weird until nomic foundation sls is merged into nvim-lspconfig
-local utils = require("core.utils")
+local utils = require "core.utils"
 local solidity_on_attach = function(client, bufnr)
   -- this changes the original on attach to allow document formatting
   utils.load_mappings("lspconfig", { buffer = bufnr })
@@ -38,4 +39,10 @@ lspconfig.solidity.setup {
   filetypes = { "solidity" },
   root_dir = lspconfig.util.find_git_ancestor,
   single_file_support = true,
+}
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "python" },
 }
