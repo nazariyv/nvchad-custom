@@ -3,11 +3,11 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Override plugin definition options
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
+
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -25,7 +25,6 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
@@ -53,7 +52,7 @@ local plugins = {
   -- To make a plugin not be loaded
   {
     "NvChad/nvim-colorizer.lua",
-    enabled = false
+    enabled = false,
   },
 
   -- rust config taken from: https://www.youtube.com/watch?v=mh_EJhH49Ms
@@ -62,7 +61,7 @@ local plugins = {
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 1
-    end
+    end,
   },
 
   {
@@ -74,42 +73,37 @@ local plugins = {
     end,
     config = function(_, opts)
       return require("rust-tools").setup(opts)
-    end
+    end,
   },
 
   {
     "saecki/crates.nvim",
-    ft = {"rust", "toml"},
+    ft = { "rust", "toml" },
     config = function(_, opts)
-      local crates = require('crates')
+      local crates = require "crates"
       crates.setup(opts)
       crates.show()
     end,
   },
 
-  -- TODO: not sure if this actually works properly
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function()
-      local M = require "plugins.configs.cmp"
-      table.insert(M.sources, {name = "crates"})
-      return M
-    end,
-  },
-
+  -- TODO
   -- I literally had to go into: /home/shredder/.local/share/nvim/lazy/markdown-preview.nvim
   -- and `yarn install`. There is some problem with this plugin right now
   -- also see: https://github.com/iamcco/markdown-preview.nvim/issues/188
   -- I saw the debug message by going `:messages` in nvim
   {
     "iamcco/markdown-preview.nvim",
-    lazy = false,
     run = "cd app & yarn install",
     setup = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
   },
+
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  }
 }
 
 return plugins
