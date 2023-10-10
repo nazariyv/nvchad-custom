@@ -15,6 +15,7 @@ M.treesitter = {
     "python",
     "rust",
     "solidity",
+    "graphql"
   },
   indent = {
     enable = true,
@@ -54,6 +55,9 @@ M.mason = {
 
     -- solidity
     "nomicfoundation-solidity-language-server",
+
+    -- graphql
+    "graphql-language-service-cli",
   },
 }
 
