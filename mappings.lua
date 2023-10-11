@@ -62,4 +62,18 @@ M.dap_python = {
   },
 }
 
+M.nvimtree = {
+  plugin = true,
+  n = {
+    -- default for this is U.
+    -- but it takes me to the beginning of the line, insteaf of toggling
+    ["th"] = {
+      function()
+        local api = require("nvim-tree.api")
+        api.tree.toggle_hidden_filter()
+      end,
+    }
+  }
+}
+
 return M
