@@ -15,7 +15,25 @@ M.treesitter = {
     "python",
     "rust",
     "solidity",
-    "graphql"
+    "graphql",
+    "yaml",
+    "toml",
+    "terraform",
+    "sql",
+    "regex",
+    "json",
+    "http",
+    "html",
+    "go",
+    "git_config",
+    "git_rebase",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
+    "diff",
+    "dockerfile",
+    "css",
+    "bash"
   },
   indent = {
     enable = true,
@@ -58,6 +76,9 @@ M.mason = {
 
     -- graphql
     "graphql-language-service-cli",
+
+    "bash-language-server",
+    "json-lsp",
   },
 }
 
@@ -65,6 +86,7 @@ M.mason = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
 
   renderer = {
