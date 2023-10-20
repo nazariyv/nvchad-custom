@@ -22,6 +22,9 @@ local sources = {
   b.diagnostics.mypy,
   b.diagnostics.ruff,
   b.formatting.black.with { filetypes = { "python" } },
+
+  -- shellcheck
+  b.diagnostics.shellcheck,
 }
 
 null_ls.setup {

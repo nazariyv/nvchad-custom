@@ -79,6 +79,8 @@ M.mason = {
 
     "bash-language-server",
     "json-lsp",
+
+    "shellcheck",
   },
 }
 
