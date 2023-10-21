@@ -156,6 +156,13 @@ local plugins = {
     },
     lazy = false,
   },
+
+
+  -- undotree
+  {
+    "mbbill/undotree",
+    lazy = false,
+  },
 }
 
 return plugins
