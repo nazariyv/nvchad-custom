@@ -14,6 +14,9 @@ M.general = {
     ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "replace all words" },
     ["<leader>qq"] = { ":wqa<CR>", "write and close all" },
 
+    ["n"] = { "nzzzv", "allows search tersm to stay in the middle" },
+    ["N"] = { "Nzzzv", "allows search terms to stay in the middle" },
+
     -- for tmux navigator
     ["<C-h>"] = { " <cmd> TmuxNavigateLeft<CR>", "window left" },
     ["<C-l>"] = { " <cmd> TmuxNavigateRight<CR>", "window right" },
@@ -25,6 +28,15 @@ M.general = {
 
     -- undotree
     ["<leader>u"] = { " <cmd> UndotreeShow<CR>", "show undotree" },
+
+    -- prime's maps
+    -- TODO: for another day when I reserach `tmux-sessionizer`
+    -- ["<C-f>"] = { " <cmd> silent !tmux neww tmux-sessionizer<CR>" },
+    -- quickfix & loclist navigation
+    ["<A-k>"] = { " <cmd> cnext<CR>zz" },
+    ["<A-j>"] = { " <cmd> cprev<CR>zz" },
+    ["<leader>k"] = { " <cmd> lnext<CR>zz" },
+    ["<leader>j"] = { " <cmd> lprev<CR>zz" },
   },
 
   v = {
@@ -39,6 +51,9 @@ M.general = {
   },
   x = {
     ["<leader>p"] = { '"_dP', "copying trick from prime" },
+  },
+  i = {
+    ["<C-c>"] = { "<Esc>", "leave insert mode in style. prime's favourite" },
   },
 }
 
