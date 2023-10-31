@@ -157,6 +157,12 @@ local plugins = {
     lazy = false,
   },
 
+  -- all the issues with the code
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
+  },
 
   -- undotree
   {
