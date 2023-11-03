@@ -143,20 +143,6 @@ local plugins = {
     end,
   },
 
-  -- https://github.com/folke/zen-mode.nvim
-  {
-    "folke/zen-mode.nvim",
-    opts = {
-      window = {
-        -- shading of the backdrop
-        backdrop = 0.85,
-        -- width of the code window
-        width = 0.70,
-      },
-    },
-    lazy = false,
-  },
-
   -- all the issues with the code
   {
     "folke/trouble.nvim",
