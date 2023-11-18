@@ -58,7 +58,11 @@ M.mason = {
 
     -- python
     "pyright",
-    "mypy",
+    -- ! it's the responsibility of python project you are working in to add
+    -- ! mypy with whatever other stubs / extensions / configs in mypy.ini
+    -- ! and point null-ls to it in mypy.ini with the following line:
+    -- python_executable = .venv/bin/python
+    -- "mypy",
     "ruff",
     "ruff-lsp",
     "black",

@@ -33,8 +33,8 @@ M.general = {
     -- TODO: for another day when I reserach `tmux-sessionizer`
     -- ["<C-f>"] = { " <cmd> silent !tmux neww tmux-sessionizer<CR>" },
     -- quickfix & loclist navigation
-    ["<A-k>"] = { " <cmd> cnext<CR>zz" },
-    ["<A-j>"] = { " <cmd> cprev<CR>zz" },
+    ["<A-j>"] = { " <cmd> cnext<CR>zz" },
+    ["<A-k>"] = { " <cmd> cprev<CR>zz" },
     ["<leader>k"] = { " <cmd> lnext<CR>zz" },
     ["<leader>j"] = { " <cmd> lprev<CR>zz" },
   },
