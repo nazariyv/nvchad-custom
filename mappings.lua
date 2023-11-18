@@ -23,9 +23,6 @@ M.general = {
     ["<C-j>"] = { " <cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-k>"] = { " <cmd> TmuxNavigateUp<CR>", "window up" },
 
-    -- zenmode
-    ["<leader>z"] = { " <cmd> ZenMode<CR>", "engage zen mode" },
-
     -- undotree
     ["<leader>u"] = { " <cmd> UndotreeShow<CR>", "show undotree" },
 

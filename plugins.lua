@@ -150,6 +150,12 @@ local plugins = {
     lazy = false,
   },
 
+  -- vim fugitive
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
+
   -- undotree
   {
     "mbbill/undotree",
